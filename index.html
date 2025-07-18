@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>数値変換スクリプト</title>
+</head>
+<body>
+  <h2>数値変換</h2>
+  
+  <!-- 入力ボックスA -->
+  <input type="text" id="inputNumber" placeholder="例: 1billion, 1000000000" />
+
+  <!-- 表示形式選択ボックスB -->
+  <select id="formatSelect">
+    <option value="jp">日本語表記（例：10億）</option>
+    <option value="comma">カンマ区切り（例：1,000,000,000）</option>
+    <option value="plain">そのまま数字（例：1000000000）</option>
+    <option value="exp">指数表記（例：1e9）</option>
+  </select>
+
+  <!-- 出力ボックスC -->
+  <div id="output" style="margin-top: 10px; font-weight: bold;"></div>
+
+  <!-- 外部JS読み込み -->
+  <script src="script.js"></script>
+</body>
+</html>
