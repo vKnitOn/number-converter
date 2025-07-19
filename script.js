@@ -118,7 +118,7 @@ function toComma(num){
 function convertNumber(inputStr, outputFormat) {
     const num = parseNumber(inputStr);
     if (isNaN(num)) return '無効な数値です';
-    if(num < 0) return '正の値を入力してください。';
+    if (num < 0) return '正の値を入力してください';
     num = Math.floor(num)
 
     switch (outputFormat) {
