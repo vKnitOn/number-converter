@@ -4,26 +4,30 @@ body {
   background-color: #121212;
   color: #eee;
   margin: 0;
+
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   width: 100%;
   max-width: 900px;
 }
 
-/* ヘッダー：タイトルとセレクトボックスを横並びに */
+/* ヘッダー：中央寄せで横並び */
 .header-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
+  text-align: center;
 }
 
 .header-row h2 {
@@ -32,6 +36,7 @@ body {
   color: #fff;
 }
 
+/* セレクトボックス */
 #formatSelect {
   font-size: 14px;
   background-color: #222;
@@ -40,18 +45,21 @@ body {
   padding: 5px;
 }
 
-/* 入力と出力を横並びに */
+/* 入力と出力を中央寄せで横並びに */
 .main-row {
   display: flex;
+  justify-content: center;
   gap: 30px;
+  width: 100%;
 }
 
-/* 入力・出力共通のエリア */
+/* 入力・出力共通 */
 .input-area,
 .output-area {
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: 300px;
 }
 
 /* 入力欄 */
@@ -64,6 +72,7 @@ body {
   border: 1px solid #444;
   color: #eee;
   resize: vertical;
+  text-align: center;
 }
 
 /* 出力欄 */
@@ -75,16 +84,19 @@ body {
   padding: 10px;
   background: #1e1e1e;
   color: #eee;
+  text-align: center;
 }
 
-/* 説明文（下部） */
+/* 説明文（中央寄せだがテキストは左揃え） */
 .lore-area {
-  margin-top: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .note {
   color: #aaa;
   font-size: 14px;
   text-align: left;
-  max-width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
