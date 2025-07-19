@@ -59,16 +59,17 @@ body {
   width: 100%;
 }
 
-/* 出力欄 */
+/* 出力欄（inputと高さ・スタイル揃え） */
 #output {
-  font-weight: bold;
-  font-size: 18px;
   height: 120px;
-  border: 1px solid #444;
+  font-size: 16px;
   padding: 10px;
-  background: #1e1e1e;
+  font-weight: bold;
+  border: 1px solid #444;
+  background-color: #1e1e1e;
   color: #eee;
   width: 100%;
+  resize: none;
 }
 
 /* セレクトボックス */
@@ -87,7 +88,4 @@ body {
 }
 
 .note {
-  color: #aaa;
-  font-size: 14px;
-  text-align: left;
-}
+  color: #a
