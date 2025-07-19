@@ -1,41 +1,39 @@
 body {
   font-family: sans-serif;
-  padding: 20px;
   background-color: #121212;
   color: #eee;
   margin: 0;
-
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 30px;
+  width: 100%;
+  max-width: 800px;
+  align-items: center;
+}
+
+/* タイトルとセレクトボックス */
+.header-row {
+  display: flex;
+  justify-content: center;
+  gap: 200px; /* ここで位置を調整（数値変換とセレクトの間隔） */
   width: 100%;
   max-width: 700px;
 }
 
-/* ヘッダー：中央寄せで横並び */
-.header-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
-.header-row h2 {
-  font-size: 20px;
+.title {
+  font-size: 24px;
   margin: 0;
   color: #fff;
-  text-align: center;
 }
 
+/* セレクトボックス */
 #formatSelect {
   font-size: 14px;
   background-color: #222;
@@ -44,19 +42,19 @@ body {
   padding: 5px;
 }
 
-/* 入力と出力を横並びで中央に配置 */
+/* 入力と出力ボックスの並び */
 .main-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   width: 100%;
 }
 
+/* 入力欄・出力欄 共通設定 */
 .input-area,
 .output-area {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 300px;
 }
 
@@ -82,20 +80,17 @@ body {
   padding: 10px;
   background: #1e1e1e;
   color: #eee;
-  width: 100%;
   text-align: center;
 }
 
 /* 説明文 */
 .lore-area {
-  width: 100%;
   text-align: center;
+  max-width: 600px;
 }
 
 .note {
   color: #aaa;
   font-size: 14px;
   text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
 }
