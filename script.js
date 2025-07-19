@@ -110,5 +110,4 @@ function convertNumber(inputStr, outputFormat) {
 
   input.addEventListener('input', updateOutput);
   select.addEventListener('change', updateOutput);
-  updateOutput(); // 初回表示
 });
