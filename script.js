@@ -101,15 +101,14 @@ function convertNumber(inputStr, outputFormat) {
 }
 
 
-
-function updateOutput() {
+  function updateOutput() {
     const inputStr = input.value;
     const outputFormat = select.value;
     const result = convertNumber(inputStr, outputFormat);
     output.textContent = result;
-}
-// 入力と選択変化で更新
-input.addEventListener('input', updateOutput);
-select.addEventListener('change', updateOutput);
-// 追加: 初回読み込み時にも更新
-updateOutput();
+  }
+
+  input.addEventListener('input', updateOutput);
+  select.addEventListener('change', updateOutput);
+  updateOutput(); // 初回表示
+});
