@@ -70,31 +70,31 @@
 <body>
   <h2 style="text-align: center; margin-bottom: 20px;">数値変換</h2>
 
-  <div class="container">
-    <!-- 入力エリア -->
-    <div class="input-area">
-      <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
-    </div>
-
-    <!-- 出力・変換方法エリア -->
-    <div class="output-area">
-      <select id="formatSelect">
-        <option value="jp">日本語表記（例：10億）</option>
-        <option value="comma">カンマ区切り（例：1,000,000,000）</option>
-        <option value="plain">そのまま数字（例：1000000000）</option>
-        <option value="exp">指数表記（例：1e9）</option>
-        <option value="en">英語表記（例：1billion）</option>
-      </select>
-
-      <div id="output"></div>
-
-      <p class="note">
-        入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
-        出力形式を選んで結果を確認してください。
-      </p>
-    </div>
+<div class="container">
+  <!-- 入力エリア -->
+  <div class="input-area">
+    <h2>数値変換</h2>
+    <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
   </div>
 
+  <!-- 出力・変換方法エリア -->
+  <div class="output-area">
+    <select id="formatSelect">
+      <option value="jp">日本語表記（例：10億）</option>
+      <option value="comma">カンマ区切り（例：1,000,000,000）</option>
+      <option value="plain">そのまま数字（例：1000000000）</option>
+      <option value="exp">指数表記（例：1e9）</option>
+      <option value="en">英語表記（例：1billion）</option>
+    </select>
+
+    <div id="output"></div>
+
+    <p class="note">
+      入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
+      出力形式を選んで結果を確認してください。
+    </p>
+  </div>
+</div>
 
   <!-- 外部JS読み込み -->
   <script src="script.js"></script>
