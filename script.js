@@ -72,7 +72,8 @@ function parseNumber(str) {
 
 // 指数表記
 function toExponential(num) {
-    return Number(num).toExponential(3);
+    const n = Number(num)
+    return n.toExponential(3);
 }
 
 // 日本語表記（兆・億・万）
