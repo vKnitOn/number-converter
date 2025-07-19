@@ -22,7 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 540px; /* 幅少し拡大 */
   gap: 30px;
 }
 
@@ -36,15 +36,15 @@ body {
 .main-row {
   display: flex;
   justify-content: space-between;
-  width: 500px;
-  gap: 40px;
+  width: 540px; /* 同じく拡大 */
+  gap: 20px; /* 横の間隔を少し小さく */
 }
 
 .input-area,
 .output-area {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 250px; /* ★ 横幅を画像と同じくらいに調整 */
 }
 
 /* 入力欄 */
@@ -59,7 +59,7 @@ body {
   width: 100%;
 }
 
-/* 出力欄（inputと高さ・スタイル揃え） */
+/* 出力欄 */
 #output {
   height: 120px;
   font-size: 16px;
@@ -83,7 +83,7 @@ body {
 
 /* 説明文 */
 .lore-area {
-  max-width: 500px;
+  max-width: 540px;
   align-self: flex-start;
 }
 
