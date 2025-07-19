@@ -78,10 +78,17 @@ function toComma(num) {
 
 // 英語単位表記（billion, million, thousand, trillion）
 function toEnglishUnit(num) {
-    if (num >= 1e12) return (num / 1e12) + ' trillion';
-    if (num >= 1e9) return (num / 1e9) + ' billion';
-    if (num >= 1e6) return (num / 1e6) + ' million';
-    if (num >= 1e3) return (num / 1e3) + ' thousand';
+    if (num >= 1e33) return (num / 1e33) + ' Dc (Decillion)';
+    if (num >= 1e30) return (num / 1e30) + ' No (Nonillion)';
+    if (num >= 1e27) return (num / 1e27) + ' Oc (Octillion)';
+    if (num >= 1e24) return (num / 1e24) + ' Sp (Septillion)';
+    if (num >= 1e21) return (num / 1e21) + ' Sx (Sextillion)';
+    if (num >= 1e18) return (num / 1e18) + ' Qi (Quintillion)';
+    if (num >= 1e15) return (num / 1e15) + ' Qa (Quadrillion)';
+    if (num >= 1e12) return (num / 1e12) + ' T (Trillion)';
+    if (num >= 1e9) return (num / 1e9) + ' B (Billion)';
+    if (num >= 1e6) return (num / 1e6) + ' M (Million)';
+    if (num >= 1e3) return (num / 1e3) + ' K';
     return num.toString();
 }
 
