@@ -39,7 +39,7 @@ body {
   justify-content: space-between;
   width: 100%;
   max-width: 600px;
-  gap: 50px;
+  gap: 80px;
 }
 
 .input-area,
@@ -58,7 +58,7 @@ body {
   border: 1px solid #444;
   color: #eee;
   resize: vertical;
-  width: 120%;
+  width: 200%;
 }
 
 /* 出力欄 */
@@ -70,7 +70,7 @@ body {
   padding: 10px;
   background: #1e1e1e;
   color: #eee;
-  width: 120%;
+  width: 200%;
 }
 
 /* セレクトボックス */
