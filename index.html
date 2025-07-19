@@ -1,25 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>数値変換</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    
+      /* 追加 */
+      display: flex;
+      justify-content: center;  /* 横方向の中央寄せ */
+      align-items: center;      /* 縦方向の中央寄せ */
+      height: 100vh;            /* ビューポートの高さいっぱいに */
+      margin: 0;                /* 余白リセット */
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    #inputNumber {
+      width: 200px;
+      height: 80px; /* 縦に広くする */
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .output-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #formatSelect {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    #output {
+      font-weight: bold;
+      font-size: 18px;
+      min-width: 300px;
+      min-height: 40px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
 <body>
+  <h2>数値変換</h2>
+
   <div class="container">
+    <!-- 入力ボックスA -->
+    <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
     <div class="input-area">
       <h2>数値変換</h2>  <!-- タイトルを入力ボックスの上に -->
       <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
     </div>
 
+    <!-- 出力・選択ボックスエリア -->
     <div class="output-area">
+      <!-- 表示形式選択ボックスB -->
       <select id="formatSelect">
         <option value="jp">日本語表記（例：10億）</option>
         <option value="comma">カンマ区切り（例：1,000,000,000）</option>
-        <option value="plain">そのまま数字（例：1000000000）</option>
-        <option value="exp">指数表記（例：1e9）</option>
+        <h2>数値変換</h2>
         <option value="en">英語表記（例：1billion）</option>
       </select>
 
+      <!-- 出力ボックスC -->
       <div id="output"></div>
 
+        <p style="margin-top: 8px; color: #555;">
       <p style="margin-top: 8px; color: #ccc;">
         入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
         出力形式を選んで結果を確認してください。
+        </p>
       </p>
     </div>
   </div>
+
+  <!-- 外部JS読み込み -->
+  <script src="script.js"></script>
 </body>
+</html>
