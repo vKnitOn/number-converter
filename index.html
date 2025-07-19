@@ -8,8 +8,8 @@
 <body>
   <div class="container">
 
-    <!-- タイトルとセレクトを横並び -->
-    <div class="header-row">
+    <!-- タイトルとセレクト：同じ行 -->
+    <div class="top-row">
       <h2 class="title">数値変換</h2>
       <select id="formatSelect">
         <option value="jp">日本語表記（例：10億）</option>
@@ -20,7 +20,7 @@
       </select>
     </div>
 
-    <!-- 入力と出力エリア -->
+    <!-- 入力と出力の横並び -->
     <div class="main-row">
       <div class="input-area">
         <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <!-- 説明文 -->
+    <!-- 説明 -->
     <div class="lore-area">
       <p class="note">
         入力は「1b」「10億」「1e9」「1,000,000,000」など、様々な形式でOKです。<br>
