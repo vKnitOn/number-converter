@@ -1,65 +1,40 @@
 body {
   font-family: sans-serif;
+  padding: 20px;
   background-color: #121212;
   color: #eee;
   margin: 0;
-  height: 100vh;
+
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* 上部揃え→ */
-  padding-top: 10vh;       /* 画面の中央寄りに少し下げる */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
   gap: 30px;
-  width: 100%;
-  max-width: 800px;
-  padding: 0 20px;
+  align-items: flex-start;
 }
 
-/* タイトルとセレクトを横並び */
-.top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 700px;
-  width: 100%;
-}
-
-.title {
-  font-size: 24px;
-  margin: 0;
-  color: #fff;
-}
-
-#formatSelect {
-  font-size: 14px;
-  background-color: #222;
-  color: #eee;
-  border: 1px solid #444;
-  padding: 5px;
-}
-
-/* 入力・出力エリア */
-.main-row {
-  display: flex;
-  gap: 30px;
-  max-width: 700px;
-  width: 100%;
-}
-
+/* 入力・出力共通 */
 .input-area,
 .output-area {
-  flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* タイトル */
+.input-area h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #fff;
 }
 
 /* 入力欄 */
 #inputNumber {
-  width: 100%;
+  width: 240px;
   height: 100px;
   font-size: 16px;
   padding: 10px;
@@ -67,26 +42,35 @@ body {
   border: 1px solid #444;
   color: #eee;
   resize: vertical;
-  text-align: center;
+}
+
+/* 出力形式セレクト */
+#formatSelect {
+  margin-bottom: 10px;
+  font-size: 14px;
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+  padding: 5px;
 }
 
 /* 出力欄 */
 #output {
   font-weight: bold;
   font-size: 18px;
-  min-height: 100px;
+  min-width: 300px;
+  min-height: 30px;
   border: 1px solid #444;
   padding: 10px;
   background: #1e1e1e;
   color: #eee;
-  width: 100%;
-  text-align: center;
 }
 
 /* 説明文 */
 .lore-area {
-  max-width: 700px;
-  text-align: center;
+  margin-top: 30px;
+  max-width: 600px;
+  align-self: flex-start;
 }
 
 .note {
