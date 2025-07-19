@@ -72,7 +72,7 @@ function parseNumber(str) {
 
 // 指数表記
 function toExponential(num) {
-    return num.toExponential();
+    return num.toExponential().toFixed(3);
 }
 
 // 日本語表記（兆・億・万）
@@ -92,19 +92,20 @@ function toComma(num) {
 
 // 英語単位表記（billion, million, thousand, trillion）
 function toEnglishUnit(num) {
-    if (num >= 1e33) return (num / 1e33) + ' Dc (Decillion)';
-    if (num >= 1e30) return (num / 1e30) + ' No (Nonillion)';
-    if (num >= 1e27) return (num / 1e27) + ' Oc (Octillion)';
-    if (num >= 1e24) return (num / 1e24) + ' Sp (Septillion)';
-    if (num >= 1e21) return (num / 1e21) + ' Sx (Sextillion)';
-    if (num >= 1e18) return (num / 1e18) + ' Qi (Quintillion)';
-    if (num >= 1e15) return (num / 1e15) + ' Qa (Quadrillion)';
-    if (num >= 1e12) return (num / 1e12) + ' T (Trillion)';
-    if (num >= 1e9) return (num / 1e9) + ' B (Billion)';
-    if (num >= 1e6) return (num / 1e6) + ' M (Million)';
-    if (num >= 1e3) return (num / 1e3) + ' K';
-    return num.toString();
+  if (num >= 1e33) return Number((num / 1e33).toFixed(3)) + ' Dc (Decillion)';
+  if (num >= 1e30) return Number((num / 1e30).toFixed(3)) + ' No (Nonillion)';
+  if (num >= 1e27) return Number((num / 1e27).toFixed(3)) + ' Oc (Octillion)';
+  if (num >= 1e24) return Number((num / 1e24).toFixed(3)) + ' Sp (Septillion)';
+  if (num >= 1e21) return Number((num / 1e21).toFixed(3)) + ' Sx (Sextillion)';
+  if (num >= 1e18) return Number((num / 1e18).toFixed(3)) + ' Qi (Quintillion)';
+  if (num >= 1e15) return Number((num / 1e15).toFixed(3)) + ' Qa (Quadrillion)';
+  if (num >= 1e12) return Number((num / 1e12).toFixed(3)) + ' T (Trillion)';
+  if (num >= 1e9)  return Number((num / 1e9).toFixed(3)) + ' B (Billion)';
+  if (num >= 1e6)  return Number((num / 1e6).toFixed(3)) + ' M (Million)';
+  if (num >= 1e3)  return Number((num / 1e3).toFixed(3)) + ' K';
+  return num.toString();
 }
+
 
 function convertNumber(inputStr, outputFormat) {
     const num = parseNumber(inputStr);
