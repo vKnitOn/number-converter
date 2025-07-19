@@ -1,24 +1,7 @@
-body {
-  background: #111;
-  color: #fff;
-  font-family: sans-serif;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-}
-
 .container {
   display: flex;
-  flex-direction: column; /* ←縦に積む */
-  gap: 20px;
-  max-width: 800px;
-  width: 100%;
-}
-
-.container-content {
-  display: flex;
   gap: 30px;
-  align-items: flex-start;
+  align-items: flex-start; /* 上端に揃える */
 }
 
 /* 入力・出力共通 */
@@ -39,7 +22,8 @@ body {
 /* 説明文 */
 .note {
   color: #aaa;
+  margin-top: 30px;
+  margin: 30px auto 0 0;  /* ←左寄せになる */
   font-size: 14px;
-  text-align: left;
   max-width: 600px;
 }
