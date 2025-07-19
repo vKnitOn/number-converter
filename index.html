@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>数値変換</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <!-- 入力エリア -->
-    <div class="input-area">
-      <h2>数値変換</h2>
-      <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
-    </div>
+<meta charset="UTF-8" />
+<title>数値変換</title>
+<style>
+body {
+font-family: sans-serif;
+padding: 20px;
+background-color: #121212;
+color: #eee;
+margin: 0;
 
-    <!-- 出力エリア -->
-    <div class="output-area">
-      <select id="formatSelect">
-        <option value="jp">日本語表記（例：10億）</option>
-        <option value="comma">カンマ区切り</option>
-        <option value="plain">そのまま数字</option>
-        <option value="exp">指数表記</option>
-        <option value="en">英語表記</option>
-      </select>
-      <div id="output"></div>
-    </div>
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
 
-  <!-- 説明文 -->
-  <p class="note">
-    入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
-    出力形式を選んで結果を確認してください。
-  </p>
+.container {
+display: flex;
+gap: 60px;
+align-items: flex-start;
+width: 800px; /* 中央に収まりやすくする */
+}
+
+.input-area, .output-area {
+width: 50%;
+}
+
+.input-area h2 {
+margin: 0 0 10px;
+font-size: 20px;
+}
+
+.container {
+align-items: flex-start; /* ← ここを修正して、上下のズレを解消 */
+}
+
+  .note {
+    color: #aaa;
+    margin-top: 30px;
+    font-size: 14px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+#inputNumber {
+width: 100%;
+@@ -93,7 +102,6 @@
+<div id="output"></div>
 </div>
 
-  <!-- JavaScriptファイル読み込み -->
-  <script src="script.js"></script>
-</body>
-</html>
+  <div class="lore-area">
+<p class="note">
+入力は「1b」「10億」「1e9」「1,000,000,000」など、様々な形式でOKです。<br>
+出力形式を選んで結果を確認してください。
