@@ -72,7 +72,7 @@ function parseNumber(str) {
 
 // 指数表記
 function toExponential(num) {
-    return num.parseFloat(num).toExponential(3);
+    return Number(num).toExponential(3);
 }
 
 // 日本語表記（兆・億・万）
