@@ -18,15 +18,15 @@ body {
   max-width: 900px;
 }
 
-/* ヘッダー：タイトルとセレクトを横並びに */
-.header-area {
+/* ヘッダー：タイトルとセレクトボックスを横並びに */
+.header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
 
-.header-area h2 {
+.header-row h2 {
   font-size: 20px;
   margin: 0;
   color: #fff;
@@ -40,13 +40,13 @@ body {
   padding: 5px;
 }
 
-/* メインエリア：入力と出力を横並びに */
-.main-area {
+/* 入力と出力を横並びに */
+.main-row {
   display: flex;
   gap: 30px;
 }
 
-/* 入力・出力共通 */
+/* 入力・出力共通のエリア */
 .input-area,
 .output-area {
   display: flex;
@@ -77,9 +77,9 @@ body {
   color: #eee;
 }
 
-/* 説明文 */
+/* 説明文（下部） */
 .lore-area {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .note {
