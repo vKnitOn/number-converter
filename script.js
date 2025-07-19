@@ -119,7 +119,7 @@ function convertNumber(inputStr, outputFormat) {
     let num = parseNumber(inputStr);
     if (isNaN(num)) return '無効な数値です';
     if (num < 0) return '正の値を入力してください';
-    num = Math.floor(num)
+    num = Math.round(num)
 
     switch (outputFormat) {
         case 'exp': return toExponential(num);
