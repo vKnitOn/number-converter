@@ -22,9 +22,9 @@
 /* 説明文 */
 .note {
   color: #aaa;
-  margin-top: 30px;
+  margin: 30px auto 0 0;  /* ←左寄せになる */
   font-size: 14px;
-  text-align: left; /* 左揃え */
+  text-align: left;
   max-width: 600px;
-  align-self: flex-start; /* 左側に寄せる */
 }
+
