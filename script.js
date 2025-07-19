@@ -4,110 +4,106 @@ const input = document.getElementById('inputNumber');
 const select = document.getElementById('formatSelect');
 const output = document.getElementById('output');
 
+const unitDefinitions = {
+    jp: [
+        { label: '垓', value: 1e20 },
+        { label: '京', value: 1e16 },
+        { label: '兆', value: 1e12 },
+        { label: '億', value: 1e8 },
+        { label: '万', value: 1e4 },
+    ],
+    en: [
+        { label: 'Dc (Decillion)', value: 1e33, aliases: ['dc', 'decillion'] },
+        { label: 'No (Nonillion)', value: 1e30, aliases: ['no', 'nonillion'] },
+        { label: 'Oc (Octillion)', value: 1e27, aliases: ['oc', 'octillion'] },
+        { label: 'Sp (Septillion)', value: 1e24, aliases: ['sp', 'septillion'] },
+        { label: 'Sx (Sextillion)', value: 1e21, aliases: ['sx', 'sextillion'] },
+        { label: 'Qi (Quintillion)', value: 1e18, aliases: ['qi', 'quintillion'] },
+        { label: 'Qa (Quadrillion)', value: 1e15, aliases: ['qa', 'quadrillion'] },
+        { label: 'T (Trillion)', value: 1e12, aliases: ['t', 'trillion'] },
+        { label: 'B (Billion)', value: 1e9, aliases: ['b', 'billion'] },
+        { label: 'M (Million)', value: 1e6, aliases: ['m', 'million'] },
+        { label: 'K', value: 1e3, aliases: ['k', 'thousand'] },
+        ]
+};
+
+    /*
+            入力部分
+                        */
+
 function parseNumber(str) {
     const s = str.trim().toLowerCase();
 
-    // 指数表記（"e" を含み、数値として変換できるか）
+    // 1. 指数表記
     if (s.includes('e')) {
         const n = Number(s);
         if (!isNaN(n)) return n;
     }
 
-    // 2) カンマ区切り除去して数値に
+    // 2. 数字表記
     const noComma = s.replace(/,/g, '');
     if (!isNaN(Number(noComma))) {
         return Number(noComma);
     }
 
-    // 3) 日本語単位対応（兆・億・万）
-    const jpUnits = { '兆': 1e12, '億': 1e8, '万': 1e4 };
-    for (const unit in jpUnits) {
-        if (s.endsWith(unit)) {
-        const baseStr = s.slice(0, -unit.length);
-        const baseNum = Number(baseStr);
-        if (!isNaN(baseNum)) {
-            return baseNum * jpUnits[unit];
-        }
+    // 3. 日本語表記
+    for (const unit of unitDefinitions.jp) {
+        if (s.endsWith(unit.label)) {
+            const base = s.slice(0, -unit.label.length);
+            const baseNum = Number(base);
+            if (!isNaN(baseNum)) return baseNum * unit.value;
         }
     }
 
-    // 4) 英語単位対応（billion, million, thousand, trillion）
-    const enUnits = {
-    'k': 1e3,
-    'thousand': 1e3,
-    'm': 1e6,
-    'million': 1e6,
-    'b': 1e9,
-    'billion': 1e9,
-    't': 1e12,
-    'trillion': 1e12,
-    'qa': 1e15,
-    'quadrillion': 1e15,
-    'qi': 1e18,
-    'quintillion': 1e18,
-    'sx': 1e21,
-    'sextillion': 1e21,
-    'sp': 1e24,
-    'septillion': 1e24,
-    'oc': 1e27,
-    'octillion': 1e27,
-    'no': 1e30,
-    'nonillion': 1e30,
-    'dc': 1e33,
-    'decillion': 1e33
-};
-
-    for (const unit in enUnits) {
-        if (s.endsWith(unit)) {
-        const baseStr = s.slice(0, -unit.length).trim();
-        const baseNum = Number(baseStr);
-        if (!isNaN(baseNum)) {
-            return baseNum * enUnits[unit];
-        }
+    // 4. 英語表記
+    for (const unit of unitDefinitions.en) {
+        for (const alias of unit.aliases) {
+            if (s.endsWith(alias)) {
+                const base = s.slice(0, -alias.length).trim();
+                const baseNum = Number(base);
+                if (!isNaN(baseNum)) return baseNum * unit.value;
+            }
         }
     }
-
-    return NaN; // パース失敗
+    return NaN;
 }
 
-// 指数表記
-function toExponential(num) {
-    const n = Number(num)
-    return n.toExponential(3);
-}
+    /*
+            出力部分
+                        */
 
-// 日本語表記（兆・億・万）
+// 日本語表記
 function toJapanese(num) {
-    if (num >= 1e20) return (num / 1e20) + '垓';
-    if (num >= 1e16) return (num / 1e16) + '京';
-    if (num >= 1e12) return (num / 1e12) + '兆';
-    if (num >= 1e8) return (num / 1e8) + '億';
-    if (num >= 1e4) return (num / 1e4) + '万';
-  return num.toString();
+    for (const unit of unitDefinitions.jp) {
+        if (num >= unit.value) {
+            return (num / unit.value) + unit.label;
+        }
+    }
+    return num.toString();
 }
 
-// カンマ区切り
-function toComma(num) {
-    return num.toLocaleString();
-}
-
-// 英語単位表記（billion, million, thousand, trillion）
+//英語表記
 function toEnglishUnit(num) {
-  if (num >= 1e33) return Number((num / 1e33).toFixed(3)) + ' Dc (Decillion)';
-  if (num >= 1e30) return Number((num / 1e30).toFixed(3)) + ' No (Nonillion)';
-  if (num >= 1e27) return Number((num / 1e27).toFixed(3)) + ' Oc (Octillion)';
-  if (num >= 1e24) return Number((num / 1e24).toFixed(3)) + ' Sp (Septillion)';
-  if (num >= 1e21) return Number((num / 1e21).toFixed(3)) + ' Sx (Sextillion)';
-  if (num >= 1e18) return Number((num / 1e18).toFixed(3)) + ' Qi (Quintillion)';
-  if (num >= 1e15) return Number((num / 1e15).toFixed(3)) + ' Qa (Quadrillion)';
-  if (num >= 1e12) return Number((num / 1e12).toFixed(3)) + ' T (Trillion)';
-  if (num >= 1e9)  return Number((num / 1e9).toFixed(3)) + ' B (Billion)';
-  if (num >= 1e6)  return Number((num / 1e6).toFixed(3)) + ' M (Million)';
-  if (num >= 1e3)  return Number((num / 1e3).toFixed(3)) + ' K';
-  return num.toString();
+    for (const unit of unitDefinitions.en) {
+        if (num >= unit.value) {
+            return Number((num / unit.value).toFixed(3)) + ' ' + unit.label;
+        }
+    }
+    return num.toString();
+}
+
+//指数表記
+function toExponential(num){
+    return num.toExponential(3)
+}
+
+//カンマ区切り表記
+function toComma(num){
+    return num.toLocaleString()
 }
 
 
+//変換
 function convertNumber(inputStr, outputFormat) {
     const num = parseNumber(inputStr);
     if (isNaN(num)) return '無効な数値です';
@@ -123,12 +119,12 @@ function convertNumber(inputStr, outputFormat) {
 }
 
 
-  function updateOutput() {
+function updateOutput() {
     const inputStr = input.value;
     const outputFormat = select.value;
     const result = convertNumber(inputStr, outputFormat);
     output.textContent = result;
-  }
+}
 
     input.addEventListener('input', updateOutput);
     select.addEventListener('change', updateOutput);
