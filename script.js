@@ -126,5 +126,6 @@ function convertNumber(inputStr, outputFormat) {
     output.textContent = result;
   }
 
-  input.addEventListener('input', updateOutput);
-  select.addEventListener('change', updateOutput);
+    input.addEventListener('input', updateOutput);
+    select.addEventListener('change', updateOutput);
+    updateOutput(); // 初期表示
