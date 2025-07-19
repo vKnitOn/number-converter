@@ -74,27 +74,24 @@ function parseNumber(str) {
 
 // 日本語表記
 function toJapanese(num) {
+    const units = unitDefinitions.jp;
     let result = '';
+    let remainder = num;
 
-    for (const unit of unitDefinitions.jp) {
-        if (num >= unit.value) {
-            const unitCount = Math.floor(num / unit.value);
-            result += unitCount + unit.label;
-            num = num % unit.value;
+    for (const unit of units) {
+        const unitValue = Math.floor(remainder / unit.value);
+        if (unitValue > 0) {
+            result += unitValue + unit.label;
+            remainder %= unit.value;
         }
     }
 
-    if (num > 0) {
-        result += num; // 最後に「万」未満の値（千、百など）もつける
-    }
-
-    if (result === '') {
-        return num.toString(); // すべての単位に満たなければ元の数字を表示
+    if (remainder > 0 || result === '') {
+        result += remainder;
     }
 
     return result;
 }
-
 
 //英語表記
 function toEnglishUnit(num) {
