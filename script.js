@@ -30,7 +30,7 @@ const unitDefinitions = {
         { label: 'SpDc (Septendecillion)', value: 1e54, aliases: ['spdc', 'septendecillion'] },
         { label: 'SxDc (Sexdecillion)', value: 1e51, aliases: ['sxdc', 'sexdecillion'] },
         { label: 'QiDc (Quindecillion)', value: 1e48, aliases: ['qidc', 'quindecillion'] },
-        { label: 'QaDc (Quattordecillion)', value: 1e45, aliases: ['qadc', 'quattordecillion'] },
+        { label: 'QaDc (Quattuordecillion)', value: 1e45, aliases: ['qadc', 'quattuordecillion'] },
         { label: 'TDc (Tredecillion)', value: 1e42, aliases: ['tdc', 'tredecillion'] },
         { label: 'DDc (Duodecillion)', value: 1e39, aliases: ['ddc', 'duodecillion'] },
         { label: 'UDc (Undecillion)', value: 1e36, aliases: ['udc', 'undecillion'] },
