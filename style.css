@@ -1,9 +1,8 @@
 body {
-  margin: 0;
-  padding: 0;
+  font-family: sans-serif;
   background-color: #121212;
   color: #eee;
-  font-family: sans-serif;
+  margin: 0;
   height: 100vh;
 
   display: flex;
@@ -18,54 +17,60 @@ body {
   gap: 20px;
 }
 
-/* タイトルとセレクト横並び */
+/* タイトルとセレクトを横並びに */
 .top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
-  gap: 40px;
+  width: 100%;
+  max-width: 600px;
+  gap: 30px;
 }
 
-/* 入力と出力を横並び */
+.title {
+  font-size: 24px;
+  margin: 0;
+  color: #fff;
+}
+
+/* 入力と出力の横並び */
 .main-row {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
+  justify-content: space-between;
   width: 100%;
+  max-width: 600px;
+  gap: 30px;
 }
 
-/* 入力・出力エリアの幅固定 */
 .input-area,
 .output-area {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  flex: 1;
 }
 
 /* 入力欄 */
 #inputNumber {
-  width: 100%;
-  height: 120px;
+  height: 100px;
   font-size: 16px;
   padding: 10px;
   background-color: #222;
   border: 1px solid #444;
   color: #eee;
   resize: vertical;
+  width: 100%;
 }
 
 /* 出力欄 */
 #output {
-  width: 100%;
-  height: 120px;
-  font-size: 18px;
   font-weight: bold;
-  padding: 10px;
-  background-color: #1e1e1e;
+  font-size: 18px;
+  min-height: 100px;
   border: 1px solid #444;
+  padding: 10px;
+  background: #1e1e1e;
   color: #eee;
+  width: 100%;
 }
 
 /* セレクトボックス */
@@ -79,12 +84,12 @@ body {
 
 /* 説明文 */
 .lore-area {
-  max-width: 400px;
+  max-width: 600px;
   align-self: flex-start;
 }
 
 .note {
-  font-size: 14px;
   color: #aaa;
+  font-size: 14px;
   text-align: left;
 }
