@@ -7,26 +7,40 @@
     body {
       font-family: sans-serif;
       padding: 20px;
-    
-      /* 追加 */
+      background-color: #121212;
+      color: #eee;
+      margin: 0;
+
       display: flex;
-      justify-content: center;  /* 横方向の中央寄せ */
-      align-items: center;      /* 縦方向の中央寄せ */
-      height: 100vh;            /* ビューポートの高さいっぱいに */
-      margin: 0;                /* 余白リセット */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .container {
       display: flex;
-      align-items: flex-start;
-      gap: 20px;
+      gap: 30px;
+    }
+
+    .input-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-area h2 {
+      margin-bottom: 10px;
+      color: #fff;
     }
 
     #inputNumber {
-      width: 200px;
-      height: 80px; /* 縦に広くする */
+      width: 240px;
+      height: 100px;
       font-size: 16px;
       padding: 10px;
+      background-color: #222;
+      border: 1px solid #444;
+      color: #eee;
+      resize: vertical;
     }
 
     .output-area {
@@ -38,6 +52,10 @@
     #formatSelect {
       margin-bottom: 10px;
       font-size: 14px;
+      background-color: #222;
+      color: #eee;
+      border: 1px solid #444;
+      padding: 5px;
     }
 
     #output {
@@ -45,41 +63,43 @@
       font-size: 18px;
       min-width: 300px;
       min-height: 40px;
-      border: 1px solid #ccc;
+      border: 1px solid #444;
       padding: 10px;
-      background: #f9f9f9;
+      background: #1e1e1e;
+      color: #eee;
+    }
+
+    .note {
+      color: #aaa;
+      margin-top: 8px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h2>数値変換</h2>
 
   <div class="container">
-    <!-- 入力ボックスA -->
-    <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
+    <!-- 入力エリア -->
     <div class="input-area">
-      <h2>数値変換</h2>  <!-- タイトルを入力ボックスの上に -->
+      <h2>数値変換</h2>
       <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
     </div>
 
-    <!-- 出力・選択ボックスエリア -->
+    <!-- 出力・変換方法エリア -->
     <div class="output-area">
-      <!-- 表示形式選択ボックスB -->
       <select id="formatSelect">
         <option value="jp">日本語表記（例：10億）</option>
         <option value="comma">カンマ区切り（例：1,000,000,000）</option>
-        <h2>数値変換</h2>
+        <option value="plain">そのまま数字（例：1000000000）</option>
+        <option value="exp">指数表記（例：1e9）</option>
         <option value="en">英語表記（例：1billion）</option>
       </select>
 
-      <!-- 出力ボックスC -->
       <div id="output"></div>
 
-        <p style="margin-top: 8px; color: #555;">
-      <p style="margin-top: 8px; color: #ccc;">
+      <p class="note">
         入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
         出力形式を選んで結果を確認してください。
-        </p>
       </p>
     </div>
   </div>
