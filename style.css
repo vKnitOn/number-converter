@@ -88,4 +88,7 @@ body {
 }
 
 .note {
-  color: #a
+  color: #aaa;
+  font-size: 14px;
+  text-align: left;
+}
