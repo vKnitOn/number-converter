@@ -1,19 +1,52 @@
+body {
+  font-family: sans-serif;
+  background-color: #121212;
+  color: #eee;
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* タイトルとセレクトを横並びに */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  gap: 30px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0;
+  color: #fff;
+}
+
 /* 入力と出力の横並び */
 .main-row {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 600px;
-  gap: 40px;  /* 間の距離を広げた */
+  justify-content: flex-start;  /* space-between → flex-start に変更 */
+  width: 330px; /* 150 + 150 + 30 の目安 */
+  gap: 30px; /* 間隔 */
 }
 
-/* 入力・出力の親エリアはflex:1を外して固定幅に */
 .input-area,
 .output-area {
   display: flex;
   flex-direction: column;
-  /* flex: 1; 削除 */
   width: 150px; /* 固定幅 */
+  /* flex: 1; を削除 */
 }
 
 /* 入力欄 */
@@ -26,6 +59,7 @@
   color: #eee;
   resize: vertical;
   width: 100%; /* 親幅に合わせる */
+  box-sizing: border-box; /* padding含めて幅内に収める */
 }
 
 /* 出力欄 */
@@ -38,4 +72,26 @@
   background: #1e1e1e;
   color: #eee;
   width: 100%; /* 親幅に合わせる */
+  box-sizing: border-box;
+}
+
+/* セレクトボックス */
+#formatSelect {
+  font-size: 14px;
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
+  padding: 5px;
+}
+
+/* 説明文 */
+.lore-area {
+  max-width: 600px;
+  align-self: flex-start;
+}
+
+.note {
+  color: #aaa;
+  font-size: 14px;
+  text-align: left;
 }
