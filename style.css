@@ -10,20 +10,19 @@ body {
   align-items: center;
 }
 
-.wrapper {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-/* タイトルとセレクトを横並びに */
+/* 上段（タイトル + セレクト） */
 .top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 600px;
+  width: 500px;
   gap: 30px;
 }
 
@@ -33,25 +32,24 @@ body {
   color: #fff;
 }
 
-/* 入力と出力の横並び */
+/* 入力・出力の横並び */
 .main-row {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  max-width: 600px;
-  gap: 30px;
+  width: 500px;
+  gap: 40px;
 }
 
 .input-area,
 .output-area {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  width: 200px;
 }
 
 /* 入力欄 */
 #inputNumber {
-  height: 100px;
+  height: 120px;
   font-size: 16px;
   padding: 10px;
   background-color: #222;
@@ -65,7 +63,7 @@ body {
 #output {
   font-weight: bold;
   font-size: 18px;
-  min-height: 100px;
+  height: 120px;
   border: 1px solid #444;
   padding: 10px;
   background: #1e1e1e;
@@ -84,7 +82,7 @@ body {
 
 /* 説明文 */
 .lore-area {
-  max-width: 600px;
+  max-width: 500px;
   align-self: flex-start;
 }
 
