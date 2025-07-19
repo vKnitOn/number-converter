@@ -31,18 +31,17 @@ function parseNumber(str) {
 
     // 4) 英語単位対応（billion, million, thousand, trillion）
     const enUnits = {
-        'hundred': 1e2,
-        'thousand': 1e3,
-        'million': 1e6,
-        'billion': 1e9,
-        'trillion': 1e12,
-        'quadrillion': 1e15,
-        'quintillion': 1e18,
-        'sextillion': 1e21,
-        'septillion': 1e24,
-        'octillion': 1e27,
-        'nonillion': 1e30,
-        'decillion': 1e33
+        'K': 1e3,
+        'M (Million)': 1e6,
+        'B (Billion)': 1e9,
+        'T (Trillion)': 1e12,
+        'Qa (Quadrillion)': 1e15,
+        'Qi (Quintillion)': 1e18,
+        'Sx (Sextillion)': 1e21,
+        'Sp (Septillion)': 1e24,
+        'Oc (Octillion)': 1e27,
+        'No (Nonillion)': 1e30,
+        'Dc (Decillion)': 1e33
     };
     for (const unit in enUnits) {
         if (s.endsWith(unit)) {
