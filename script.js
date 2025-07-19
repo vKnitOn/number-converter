@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 const input = document.getElementById('inputNumber');
 const select = document.getElementById('formatSelect');
 const output = document.getElementById('output');
@@ -129,3 +131,5 @@ function convertNumber(inputStr, outputFormat) {
     input.addEventListener('input', updateOutput);
     select.addEventListener('change', updateOutput);
     updateOutput(); // 初期表示
+    
+});
