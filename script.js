@@ -5,8 +5,8 @@ const output = document.getElementById('output');
 function parseNumber(str) {
     const s = str.trim().toLowerCase();
 
-    // 1) 指数表記 例: 1e9
-    if (/^[\d.]+e[-+]?\d+$/.test(s)) {
+    // 指数表記（"e" を含み、数値として変換できるか）
+    if (s.includes('e')) {
         const n = Number(s);
         if (!isNaN(n)) return n;
     }
