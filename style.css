@@ -17,8 +17,8 @@ body {
   gap: 20px;
 }
 
-/* 横並び：タイトルとセレクトボックス */
-.header-row {
+/* 横並び：数値変換 ＋ セレクトボックス */
+.top-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,14 +37,13 @@ body {
   background-color: #222;
   color: #eee;
   border: 1px solid #444;
-  width: 220px;
+  width: 250px;
 }
 
-/* 横並び：入力と出力のテキストエリア */
+/* 横並び：テキストエリア2つ */
 .main-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   gap: 20px;
 }
 
