@@ -3,11 +3,10 @@ body {
   font-family: sans-serif;
   background-color: #121212;
   color: #eee;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  padding-top: 40px;
+  align-items: center;
 }
 
 .container {
@@ -15,52 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
 
-/* 横並び：数値変換 ＋ セレクトボックス */
-.top-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.title {
-  font-size: 24px;
-  margin: 0;
-  color: #fff;
-}
-
-#formatSelect {
-  font-size: 14px;
-  padding: 6px;
-  background-color: #222;
-  color: #eee;
-  border: 1px solid #444;
-  width: 250px;
-}
-
-/* 横並び：テキストエリア2つ */
-.main-row {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-#inputNumber,
-#output {
-  height: 120px;
-  font-size: 16px;
-  padding: 10px;
-  background-color: #1e1e1e;
-  border: 1px solid #444;
-  color: #eee;
-  resize: none;
-  flex: 1;
-}
-
-.note {
-  font-size: 14px;
-  color: #aaa;
-  text-align: left;
+  /* 少し下に下げるために transform を使う */
+  transform: translateY(40px);
 }
