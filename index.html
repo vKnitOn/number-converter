@@ -7,17 +7,21 @@
 </head>
 <body>
   <div class="container">
-    <h2 class="title">数値変換</h2>
-    <select id="formatSelect">
-      <option value="jp">日本語表記（例：10億）</option>
-      <option value="comma">カンマ区切り（例：1,000,000,000）</option>
-      <option value="plain">そのまま数字（例：1000000000）</option>
-      <option value="exp">指数表記（例：1e9）</option>
-      <option value="en">英語表記（例：1billion）</option>
-    </select>
+    <div class="top-row">
+      <h2 class="title">数値変換</h2>
+      <select id="formatSelect">
+        <option value="jp">日本語表記（例：10億）</option>
+        <option value="comma">カンマ区切り（例：1,000,000,000）</option>
+        <option value="plain">そのまま数字（例：1000000000）</option>
+        <option value="exp">指数表記（例：1e9）</option>
+        <option value="en">英語表記（例：1billion）</option>
+      </select>
+    </div>
 
-    <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
-    <textarea id="output" readonly>0</textarea>
+    <div class="main-row">
+      <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
+      <textarea id="output" readonly>0</textarea>
+    </div>
 
     <p class="note">
       入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
