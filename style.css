@@ -1,8 +1,44 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #121212;
+  color: #eee;
+
+  /* 画面全体で中央寄せ */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* 前のままの幅で固定 */
+  width: 700px;
+
+  /* レイアウトはそのまま縦に積む */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* タイトルとセレクトは横並び */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 入力・出力ボックス横並び */
+.main-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* ボックスは固定幅で幅が広がりすぎないように */
 #inputNumber,
 #output {
-  width: 100%;                /* 全体幅に対して最大に */
-  min-width: 300px;           /* 最低限これ以上の幅にする */
-  height: 140px;              /* 高さ少しゆったりに */
+  width: 320px;       /* 固定幅 */
+  height: 120px;
   font-size: 16px;
   padding: 10px;
   background-color: #1e1e1e;
@@ -11,25 +47,18 @@
   resize: none;
 }
 
-/* 横並び用の親要素 */
-.main-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-/* 子を均等に広げる */
-.main-row textarea {
-  flex: 1;
-}
-
-/* セレクトボックスをしっかり表示 */
+/* セレクトボックスも幅固定 */
 #formatSelect {
-  font-size: 16px;
-  padding: 8px 12px;
   width: 250px;
+  font-size: 14px;
+  padding: 6px;
   background-color: #222;
   color: #eee;
   border: 1px solid #444;
+}
+
+/* タイトル */
+.title {
+  font-size: 24px;
+  margin: 0;
 }
