@@ -15,6 +15,6 @@ body {
   flex-direction: column;
   gap: 20px;
 
-  /* 少し下に下げるために transform を使う */
-  transform: translateY(40px);
+  /* 中央より少し下に移動させる */
+  transform: translateY(60px);
 }
