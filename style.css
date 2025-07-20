@@ -5,21 +5,16 @@ body {
   color: #eee;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
+  padding-top: 40px;
 }
 
 .container {
   width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 16px;
 }
 
 .title {
@@ -34,13 +29,7 @@ body {
   background-color: #222;
   color: #eee;
   border: 1px solid #444;
-}
-
-.main-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
+  width: 250px;
 }
 
 #inputNumber,
@@ -55,12 +44,9 @@ body {
   resize: none;
 }
 
-.main-row textarea {
-  flex: 1;
-}
-
 .note {
   font-size: 14px;
   color: #aaa;
   text-align: left;
+  margin-top: 10px;
 }
