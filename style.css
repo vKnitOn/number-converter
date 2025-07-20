@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  width: 560px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -20,7 +20,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
 }
 
 .title {
@@ -32,9 +31,9 @@ body {
 #formatSelect {
   font-size: 14px;
   padding: 6px;
-  border: 1px solid #444;
   background-color: #222;
   color: #eee;
+  border: 1px solid #444;
 }
 
 .main-row {
@@ -43,23 +42,20 @@ body {
   gap: 20px;
 }
 
-.input-area,
-.output-area {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-}
-
 #inputNumber,
 #output {
+  width: 100%;
   height: 120px;
   font-size: 16px;
   padding: 10px;
-  border: 1px solid #444;
   background-color: #1e1e1e;
+  border: 1px solid #444;
   color: #eee;
   resize: none;
-  width: 100%;
+}
+
+.main-row textarea {
+  flex: 1;
 }
 
 .note {
