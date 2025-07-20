@@ -19,6 +19,7 @@ body {
 
 .top-row {
   display: flex;
+  flex-direction: row;  /* 横並びにする */
   justify-content: space-between;
   align-items: center;
 }
@@ -40,7 +41,7 @@ body {
 
 .main-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  /* 横並びにする */
   justify-content: space-between;
   gap: 20px;
 }
@@ -55,9 +56,6 @@ body {
   border: 1px solid #444;
   color: #eee;
   resize: none;
-}
-
-.main-row textarea {
   flex: 1;
 }
 
