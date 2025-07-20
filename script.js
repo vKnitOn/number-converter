@@ -1,3 +1,4 @@
+あなた:
 document.addEventListener('DOMContentLoaded', () => {
 
 const input = document.getElementById('inputNumber');
@@ -45,12 +46,12 @@ const unitDefinitions = {
         { label: 'B (Billion)', value: 1e9, aliases: ['b', 'billion'] },
         { label: 'M (Million)', value: 1e6, aliases: ['m', 'million'] },
         { label: 'K', value: 1e3, aliases: ['k', 'thousand'] },
-    ]
+        ]
 };
 
-/*
-        入力解析
-*/
+    /*
+            入力部分
+                        */
 
 function parseNumber(str) {
     const s = str.trim().toLowerCase();
@@ -89,38 +90,37 @@ function parseNumber(str) {
     return NaN;
 }
 
-/*
-        出力フォーマット
-*/
+    /*
+            出力部分
+                        */
 
 // 日本語表記
 function toJapanese(num) {
-    if (num === 0) return '0';
-
     const units = unitDefinitions.jp;
     let result = '';
     let remainder = num;
-    let count = 0;
+    let count = 0; // 追加：上位2単位だけ取得するためのカウント
 
     for (const unit of units) {
-        const unitCount = Math.floor(remainder / unit.value);
-        if (unitCount >= 1) {
-            result += unitCount + unit.label;
-            remainder -= unitCount * unit.value;
+        const unitValue = Math.floor(remainder / unit.value);
+        if (unitValue > 0) {
+            result += unitValue + unit.label;
+            remainder %= unit.value;
             count++;
         }
-
-        if (count >= 2) break; // 上位2単位まで
+        if (count >= 2) break; // 上位2単位で打ち切る
     }
 
+    // 万未満か、何も単位が使えなかった場合
     if (result === '') {
-        result = num.toString();
+        result = remainder.toString();
     }
 
     return result;
 }
 
-// 英語表記
+
+//英語表記
 function toEnglishUnit(num) {
     for (const unit of unitDefinitions.en) {
         if (num >= unit.value) {
@@ -130,22 +130,23 @@ function toEnglishUnit(num) {
     return num.toString();
 }
 
-// 指数表記
+//指数表記
 function toExponential(num){
-    return num.toExponential(3);
+    return num.toExponential(3)
 }
 
-// カンマ区切り表記
+//カンマ区切り表記
 function toComma(num){
-    return num.toLocaleString();
+    return num.toLocaleString()
 }
 
-// 変換処理
+
+//変換
 function convertNumber(inputStr, outputFormat) {
     let num = parseNumber(inputStr);
     if (isNaN(num)) return '無効な数値です';
     if (num < 0) return '正の値を入力してください';
-    num = Math.round(num);
+    num = Math.round(num)
 
     switch (outputFormat) {
         case 'exp': return toExponential(num);
@@ -157,7 +158,7 @@ function convertNumber(inputStr, outputFormat) {
     }
 }
 
-// UI更新
+
 function updateOutput() {
     const inputStr = input.value;
     const outputFormat = select.value;
@@ -165,8 +166,8 @@ function updateOutput() {
     output.textContent = result;
 }
 
-input.addEventListener('input', updateOutput);
-select.addEventListener('change', updateOutput);
-updateOutput(); // 初期表示
-
+    input.addEventListener('input', updateOutput);
+    select.addEventListener('change', updateOutput);
+    updateOutput(); // 初期表示
+    
 });
