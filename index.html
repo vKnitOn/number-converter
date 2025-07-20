@@ -7,6 +7,8 @@
 </head>
 <body>
   <div class="container">
+    
+    <!-- タイトルとセレクトボックスを横並び -->
     <div class="top-row">
       <h2 class="title">数値変換</h2>
       <select id="formatSelect">
@@ -18,11 +20,13 @@
       </select>
     </div>
 
+    <!-- 入力と出力テキストボックスを横並び -->
     <div class="main-row">
       <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
       <textarea id="output" readonly>0</textarea>
     </div>
 
+    <!-- 説明文 -->
     <p class="note">
       入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
       出力形式を選んで結果を確認してください。<br>
