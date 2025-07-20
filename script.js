@@ -95,34 +95,24 @@ function parseNumber(str) {
 
 // 日本語表記
 function toJapanese(num) {
-    if (typeof num !== 'number' || isNaN(num) || num < 0) {
-        return '無効な数値です';
-    }
-
-    // 小数は切り捨ててBigInt化
-    let bigNum = BigInt(Math.floor(num));
-
-    // BigInt版unitDefinitions.jpを作る（元のlabelは使う）
-    const units = unitDefinitions.jp.map(unit => ({
-        label: unit.label,
-        value: BigInt(unit.value.toString().replace(/e\+?/, 'e'))
-    }));
-
+    const units = unitDefinitions.jp;
     let result = '';
-    let count = 0;
+    let remainder = num;
+    let count = 0; // 追加：上位2単位だけ取得するためのカウント
 
     for (const unit of units) {
-        const unitCount = bigNum / unit.value;
-        if (unitCount > 0n) {
-            result += unitCount.toString() + unit.label;
-            bigNum = bigNum % unit.value;
+        const unitValue = Math.floor(remainder / unit.value);
+        if (unitValue > 0) {
+            result += unitValue + unit.label;
+            remainder %= unit.value;
             count++;
         }
-        if (count >= 2) break;
+        if (count >= 2) break; // 上位2単位で打ち切る
     }
 
+    // 万未満か、何も単位が使えなかった場合
     if (result === '') {
-        return bigNum.toString();
+        result = remainder.toString();
     }
 
     return result;
