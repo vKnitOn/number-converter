@@ -14,7 +14,13 @@ body {
   width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
@@ -29,7 +35,14 @@ body {
   background-color: #222;
   color: #eee;
   border: 1px solid #444;
-  width: 250px;
+  width: 220px;
+}
+
+.main-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 #inputNumber,
@@ -44,9 +57,12 @@ body {
   resize: none;
 }
 
+.main-row textarea {
+  flex: 1;
+}
+
 .note {
   font-size: 14px;
   color: #aaa;
   text-align: left;
-  margin-top: 10px;
 }
