@@ -3,10 +3,13 @@ body {
   font-family: sans-serif;
   background-color: #121212;
   color: #eee;
-  height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
@@ -15,6 +18,5 @@ body {
   flex-direction: column;
   gap: 20px;
 
-  /* 中央より少し下に移動させる */
-  transform: translateY(60px);
+  /* レイアウトサイズはそのまま、中央寄せのみ */
 }
