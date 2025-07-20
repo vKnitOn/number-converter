@@ -8,8 +8,8 @@ const unitDefinitions = {
     jp: [
         { label: '不可思議', value:1e64 },
         { label: '那由他', value:1e60 },
-        { label: '阿僧祇	', value:1e56 },
-        { label: '恒河沙	', value:1e52 },
+        { label: '阿僧祇', value:1e56 },
+        { label: '恒河沙', value:1e52 },
         { label: '極', value:1e48 },
         { label: '載', value:1e44 },
         { label: '正', value:1e40 },
