@@ -98,25 +98,26 @@ function toJapanese(num) {
     const units = unitDefinitions.jp;
     let result = '';
     let remainder = num;
-    let count = 0; // 追加：上位2単位だけ取得するためのカウント
 
     for (const unit of units) {
-        const unitValue = Math.floor(remainder / unit.value);
-        if (unitValue > 0) {
-            result += unitValue + unit.label;
-            remainder %= unit.value;
-            count++;
+        const unitCount = Math.round(remainder / unit.value);
+        const approxValue = unitCount * unit.value;
+
+        // 誤差を許容した「ほぼ等しい」チェック
+        if (Math.abs(remainder - approxValue) < 1e-6 * unit.value) {
+            result = unitCount + unit.label;
+            break;
         }
-        if (count >= 2) break; // 上位2単位で打ち切る
     }
 
-    // 万未満か、何も単位が使えなかった場合
+    // どの単位でも割り切れなかった場合
     if (result === '') {
-        result = remainder.toString();
+        result = num.toString();
     }
 
     return result;
 }
+
 
 
 //英語表記
