@@ -1,22 +1,35 @@
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #121212;
+#inputNumber,
+#output {
+  width: 100%;                /* 全体幅に対して最大に */
+  min-width: 300px;           /* 最低限これ以上の幅にする */
+  height: 140px;              /* 高さ少しゆったりに */
+  font-size: 16px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
   color: #eee;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 100vh;
-  width: 100vw;
+  resize: none;
 }
 
-.container {
-  width: 700px;
+/* 横並び用の親要素 */
+.main-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 20px;
+}
 
-  /* レイアウトサイズはそのまま、中央寄せのみ */
+/* 子を均等に広げる */
+.main-row textarea {
+  flex: 1;
+}
+
+/* セレクトボックスをしっかり表示 */
+#formatSelect {
+  font-size: 16px;
+  padding: 8px 12px;
+  width: 250px;
+  background-color: #222;
+  color: #eee;
+  border: 1px solid #444;
 }
