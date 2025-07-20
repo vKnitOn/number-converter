@@ -7,8 +7,9 @@
 </head>
 <body>
   <div class="container">
-    <div class="top-row">
-      <h2 class="title">数値変換</h2>
+    <h2 class="title">数値変換</h2>
+
+    <div class="select-area">
       <select id="formatSelect">
         <option value="jp">日本語表記（例：10億）</option>
         <option value="comma">カンマ区切り（例：1,000,000,000）</option>
@@ -18,23 +19,16 @@
       </select>
     </div>
 
-    <div class="main-row">
-      <div class="input-area">
-        <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
-      </div>
-
-      <div class="output-area">
-        <textarea id="output" readonly>0</textarea>
-      </div>
+    <div class="main-column">
+      <textarea id="inputNumber" placeholder="例: 1b, 10億, 1000000000"></textarea>
+      <textarea id="output" readonly>0</textarea>
     </div>
 
-    <div class="lore-area">
-      <p class="note">
-        入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
-        出力形式を選んで結果を確認してください。<br>
-        ※日本語表記に正確な数字が出ないバグが発生しています！！
-      </p>
-    </div>
+    <p class="note">
+      入力は「1b」「10億」「1e9」「1,000,000,000」など様々な形式でOKです。<br>
+      出力形式を選んで結果を確認してください。<br>
+      ※日本語表記に正確な数字が出ないバグが発生しています！！
+    </p>
 
     <script src="script.js"></script>
   </div>
