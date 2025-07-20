@@ -1,4 +1,3 @@
-あなた:
 document.addEventListener('DOMContentLoaded', () => {
 
 const input = document.getElementById('inputNumber');
