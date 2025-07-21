@@ -6,6 +6,7 @@ const output = document.getElementById('output');
 
 const unitDefinitions = {
     jp: [
+        { label: '無量大数', value: 1e68 },
         { label: '不可思議', value: 1e64 },
         { label: '那由他', value: 1e60 },
         { label: '阿僧祇', value: 1e56 },
@@ -24,7 +25,17 @@ const unitDefinitions = {
         { label: '万', value: 1e4 },
     ],
     en: [
-        { label: 'Vg (vigintillion)', value: 1e63, aliases: ['vg', 'vigintillion'] },
+        { label: 'Tg (Trigintillion)', value: 1e93, aliases: ['tg', 'trigintillion'] },
+        { label: 'NVg (Novemvigintillion)', value: 1e90, aliases: ['nvg', 'novemvigintillion'] },
+        { label: 'OVg (Octovigintillion)', value: 1e87, aliases: ['ovg', 'octovigintillion'] },
+        { label: 'SpVg (Septemvigintillion)', value: 1e84, aliases: ['spvg', 'septemvigintillion'] },
+        { label: 'SxVg (Sesvigintillion)', value: 1e81, aliases: ['sxvg', 'sesvigintillion'] },
+        { label: 'QiVg (Quinvigintillion)', value: 1e78, aliases: ['qivg', 'quinvigintillion'] },
+        { label: 'QaVg (Quattuorvigintillion)', value: 1e75, aliases: ['qavg', 'quattuorvigintillion'] },
+        { label: 'TVg (Tresvigintillion)', value: 1e72, aliases: ['tvg', 'tresvigintillion'] },
+        { label: 'DVg (Duovigintillion)', value: 1e69, aliases: ['dvg', 'duovigintillion'] },
+        { label: 'UVg (Unvigintillion)', value: 1e66, aliases: ['uvg', 'unvigintillion'] },
+        { label: 'Vg (Vigintillion)', value: 1e63, aliases: ['vg', 'vigintillion'] },
         { label: 'NDc (Novemdecillion)', value: 1e60, aliases: ['ndc', 'novemdecillion'] },
         { label: 'ODc (Octodecillion)', value: 1e57, aliases: ['odc', 'octodecillion'] },
         { label: 'SpDc (Septendecillion)', value: 1e54, aliases: ['spdc', 'septendecillion'] },
