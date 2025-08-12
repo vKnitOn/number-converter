@@ -5,25 +5,6 @@ const select = document.getElementById('formatSelect');
 const output = document.getElementById('output');
 
 const unitDefinitions = {
-    jp: [
-        { label: '無量大数', value: 1e68 },
-        { label: '不可思議', value: 1e64 },
-        { label: '那由他', value: 1e60 },
-        { label: '阿僧祇', value: 1e56 },
-        { label: '恒河沙', value: 1e52 },
-        { label: '極', value: 1e48 },
-        { label: '載', value: 1e44 },
-        { label: '正', value: 1e40 },
-        { label: '澗', value: 1e36 },
-        { label: '溝', value: 1e32 },
-        { label: '穣', value: 1e28 },
-        { label: '𥝱', value: 1e24 },
-        { label: '垓', value: 1e20 },
-        { label: '京', value: 1e16 },
-        { label: '兆', value: 1e12 },
-        { label: '億', value: 1e8 },
-        { label: '万', value: 1e4 },
-    ],
     en: [
         { label: 'Tg (Trigintillion)', value: 1e93, aliases: ['tg', 'trigintillion'] },
         { label: 'NVg (Novemvigintillion)', value: 1e90, aliases: ['nvg', 'novemvigintillion'] },
@@ -78,15 +59,6 @@ function parseNumber(str) {
         return Number(noComma);
     }
 
-    // 3. 日本語表記
-    for (const unit of unitDefinitions.jp) {
-        if (s.endsWith(unit.label)) {
-            const base = s.slice(0, -unit.label.length);
-            const baseNum = Number(base);
-            if (!isNaN(baseNum)) return baseNum * unit.value;
-        }
-    }
-
     // 4. 英語表記
     for (const unit of unitDefinitions.en) {
         for (const alias of unit.aliases) {
@@ -103,33 +75,6 @@ function parseNumber(str) {
     /*
             出力部分
                         */
-
-// 日本語表記
-function toJapanese(num) {
-    const units = unitDefinitions.jp;
-    let result = '';
-    let remainder = num;
-    let count = 0; // 追加：上位2単位だけ取得するためのカウント
-
-    for (const unit of units) {
-        const unitValue = Math.floor(remainder / unit.value);
-        if (unitValue > 0) {
-            result += unitValue + unit.label;
-            remainder %= unit.value;
-            count++;
-        }
-        if (count >= 2) break; // 上位2単位で打ち切る
-    }
-
-    // 万未満か、何も単位が使えなかった場合
-    if (result === '') {
-        result = remainder.toString();
-    }
-
-    return result;
-}
-
-
 //英語表記
 function toEnglishUnit(num) {
     for (const unit of unitDefinitions.en) {
